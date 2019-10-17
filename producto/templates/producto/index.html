@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,10 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/flexboxgrid.min.css">
-    <link rel="stylesheet" href="css/indexStyle.css">
-
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/indexStyle.css' %}">
 
 </head>
 
@@ -22,7 +22,7 @@
     <header id="header">
         <nav class="navegador row">
             <div class="logo col-xs-8 col-sm-4 col-md-4 col-lg-4">
-                <a href="index.html"><img src="img/Logo.png" alt=""></a>
+                <a href="index.html"><img src="{% static 'img/Logo.png' %}" alt=""></a>
 
             </div>
             <div class="icono col-xs-4" id="icono">
@@ -50,19 +50,19 @@
             <div class="carousel-inner">
 
                 <div class="item active ">
-                    <img src="img/slider/slide1.jpg" alt="">
+                    <img src="{% static 'img/slider/slide1.jpg' %}" alt="">
                 </div>
 
                 <div class="item">
-                    <img src="img/slider/slide2.jpg" alt="">
+                    <img src="{% static 'img/slider/slide2.jpg' %}" alt="">
                 </div>
 
                 <div class="item">
-                    <img src="img/slider/slide3.jpg" alt="">
+                    <img src="{% static 'img/slider/slide3.jpg' %}" alt="">
                 </div>
 
                 <div class="item">
-                    <img src="img/slider/slide4.jpg" alt="">
+                    <img src="{% static 'img/slider/slide4.jpg' %}" alt="">
                 </div>
 
             </div>
@@ -103,11 +103,11 @@
                 <h1>Contacto</h1>
                 <h3>Mesa Central</h3>
                 <div class="row">
-                    <img src="img/footer/smartphone.png" alt="">
+                    <img src="{% static 'img/footer/smartphone.png' %}" alt="">
                     <p>Telefono: +56 9 59434674</p>
                 </div>
                 <div class="row">
-                    <img src="img/footer/contact.png" alt="">
+                    <img src="{% static 'img/footer/contact.png' %}" alt="">
                     <p>Email: ventas@Chilesuplementos.cl</p>
                 </div>
             </div>
@@ -115,12 +115,12 @@
                 <h1>Redes Sociales</h1>
                 <div class="row">
                     <a href="https://www.facebook.com/chilesuplementos.cl/">
-                        <img src="img/footer/facebook-icon.png" alt=""> Siguenos en Facebook!
+                        <img src="{% static 'img/footer/facebook-icon.png' %}" alt=""> Siguenos en Facebook!
                     </a>
                 </div>
                 <div class="row">
                     <a href="https://www.instagram.com/chilesuplementos.cl/">
-                        <img src="img/footer/instagram.png" alt=""> Siguenos en Instagram!
+                        <img src="{% static 'img/footer/instagram.png' %}" alt=""> Siguenos en Instagram!
                     </a>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                 <h3 class="Titulos">Tienda Concepción</h3>
                 <div class="direcciones row">
                     <div class="casa col-xs-2">
-                        <img src="img/footer/house.png" alt="">
+                        <img src="{% static 'img/footer/house.png' %}" alt="">
                     </div>
                     <div class="addres col-xs-10">
                         <p>O'Higgins 465 local 48-Galeria italia.</p>
@@ -154,8 +154,8 @@
         </div>
     </footer>
 
-    <script src="js/Navegador.js"></script>
-    <script src="js/arriba.js"></script>
+    <script src="{% static 'js/Navegador.js' %}"></script>
+    <script src="{% static 'js/arriba.js' %}"></script>
 </body>
 
 </html>
