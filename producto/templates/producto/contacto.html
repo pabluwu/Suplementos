@@ -1,0 +1,24 @@
+{% extends 'producto/plantilla.html' %}
+{% block content %}
+    <section class="formulario row">
+        <form class="miFormulario" id="miFormulario">
+            <h1>Comunicate con nosotros!</h1>
+            <label>Nombre:</label><br>
+            <input type="text" id="itNombre" name="nombre" minlength="3" placeholder="Nombre" size="30"><br>
+
+            <label>Apellido:</label><br>
+            <input type="text" id="itApellido" name="apellido" placeholder="Apellido"><br>
+
+            <label>Correo Electronico:</label><br>
+            <input type="text" id="itMail" name="mail" placeholder="Correo" size="30"><br>
+
+            <label>Número de telefono:</label><br>
+            <input type="number" id="nbTelefono" name="fono" placeholder="Teléfono" maxlength="9"><br>
+
+
+            <label>Mensaje</label><br>
+            <textarea name="mensaje" id="txtMensaje" placeholder="Escriba aqui su consulta" cols="30" rows="10"></textarea><br>
+            <input type="submit" id="btnEnviar" class="boton" value="Enviar"> <br>
+        </form>
+    </section>
+{% endblock  %}

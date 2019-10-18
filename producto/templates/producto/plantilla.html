@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chile Suplmentos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/indexStyle.css' %}">
+
+</head>
+
+<body>
+    <span class="Ir-arriba icon-ctrl"></span>
+    <header id="header">
+        <nav class="navegador row">
+            <div class="logo col-xs-8 col-sm-4 col-md-4 col-lg-4">
+                <a href="{% url 'index' %}"><img src="{% static 'img/Logo.png' %}" alt=""></a>
+
+            </div>
+            <div class="icono col-xs-4" id="icono">
+                <span>&#9776;</span>
+            </div>
+            <div class="enlaces uno col-xs-12 col-sm-8 col-md-8 col-lg-8" id="enlaces">
+                <a href="{% url 'index'%}">Inicio</a>
+                <a href="{% url 'contacto'%}">Marcas</a>
+                <a href="{% url 'contacto'%}">Contacto</a>
+            </div>
+        </nav>
+    </header>
+    {% block content %} 
+    {% endblock %}
+    <footer class="end row" id="piePagina">
+        <div class="container-body row col-xs-12 col-lg-12">
+            <div class="contacto col-xs-12 col-lg-4">
+                <h1>Contacto</h1>
+                <h3>Mesa Central</h3>
+                <div class="row">
+                    <img src="{% static 'img/footer/smartphone.png' %}" alt="">
+                    <p>Telefono: +56 9 59434674</p>
+                </div>
+                <div class="row">
+                    <img src="{% static 'img/footer/contact.png' %}" alt="">
+                    <p>Email: ventas@Chilesuplementos.cl</p>
+                </div>
+            </div>
+            <div class="RedesSociales col-xs-12 col-lg-4">
+                <h1>Redes Sociales</h1>
+                <div class="row">
+                    <a href="https://www.facebook.com/chilesuplementos.cl/">
+                        <img src="{% static 'img/footer/facebook-icon.png' %}" alt=""> Siguenos en Facebook!
+                    </a>
+                </div>
+                <div class="row">
+                    <a href="https://www.instagram.com/chilesuplementos.cl/">
+                        <img src="{% static 'img/footer/instagram.png' %}" alt=""> Siguenos en Instagram!
+                    </a>
+                </div>
+            </div>
+            <div class="direccion col-xs-12 col-lg-4">
+                <h1>Direcciones</h1>
+                <h3 class="Titulos">Tienda Concepción</h3>
+                <div class="direcciones row">
+                    <div class="casa col-xs-2">
+                        <img src="{% static 'img/footer/house.png' %}" alt="">
+                    </div>
+                    <div class="addres col-xs-10">
+                        <p>O'Higgins 465 local 48-Galeria italia.</p>
+                        <h3 class="Titulos">Horario de atención</h3>
+                        <p>Lunes-viernes: 09:30 - 19:30</p>
+                        <p>Sábado: 10:30 - 14:00</p>
+                        <h3 class="Titulos">Bodega de despacho</h3>
+                        <p>Poeta Pedro Prado 1532, Quinta Normal.</p>
+                        <p>Santiago.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container-footer col-xs-12 col-lg-12">
+            <div class="copyright col-xs-12 col-lg-6">
+                <p>© Todos los derechos reservados | Chilesuplementos. | </p>
+            </div>
+            <div class="informacion col-xs-12 col-lg-6">
+                <p>Politica y Privación | Terminos y Condiciones</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/Navegador.js' %}"></script>
+    <script src="{% static 'js/arriba.js' %}"></script>
+    <script src="{% static 'js/validacion.js'%}"></script>
+</body>
+
+</html>
