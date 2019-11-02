@@ -1,4 +1,5 @@
 {% extends 'producto/plantilla.html' %}
+{% load staticfiles %}
 {% block content %}
     <section class="login formulario row">
      <div class="login-box">
@@ -12,10 +13,10 @@
              <label for="password">Contraseña:</label>
              <input type="password" placeholder="Ingrese Contraseña:">
              <a  class="textos" href="#"  >
-                <img class="icons" src="c:/Users/pablo/Suplementos/producto/static/img/footer/facebook-icon.png">Iniciar Sesión con Facebook
+                <img class="icons" src="{% static 'img/footer/facebook-icon.png'%}">Iniciar Sesión con Facebook
              </a>
              <a class="textos" href="#" >
-                <img class="icons" src="c:/Users/pablo/Suplementos/producto/static/img/new-google-favicon-512.png">Iniciar Sesión con Google
+                <img class="icons" src="{% static 'img/new-google-favicon-512.png'%}">Iniciar Sesión con Google
              </a>
              <input type="Submit" value="Iniciar Sesión">
              <a href="#">¿Olvidaste tu Contraseña?</a><br/>
