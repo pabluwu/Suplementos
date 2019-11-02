@@ -7,3 +7,6 @@ def index(request):
 
 def contacto(request):
     return render(request, 'producto/contacto.html',{})
+
+def login(request):
+    return render(request, 'producto/login.html',{})
