@@ -350,37 +350,37 @@ label.error {
     z-index: 1;
 }
 
-.login-box{
+.login-box {
     width: 520px;
     height: 420px;
     background: #000000;
-    color:#fff;
+    color: #fff;
     box-sizing: border-box;
     padding: 70px 30px;
 }
 
-.login-box h1{
+.login-box h1 {
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
 }
 
-.login-box label{
+.login-box label {
     margin: 0;
     padding: 0;
     font-weight: bold;
     display: block;
 }
 
-.login-box input{
+.login-box input {
     width: 100%;
     margin-bottom: 20px;
 }
 
 .login-box input[type="text"],
-.login-box input[type="password"]{
-    border:none;
+.login-box input[type="password"] {
+    border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
@@ -389,7 +389,7 @@ label.error {
     font-size: 16px;
 }
 
-.login-box input[type="submit"]{
+.login-box input[type="submit"] {
     border: none;
     outline: none;
     height: 40px;
@@ -399,28 +399,65 @@ label.error {
     border-radius: 20px;
 }
 
-.login-box a{
+.login-box a {
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
-    color:darkgrey;
+    color: darkgrey;
 }
 
-.login-box a:hover{
-    color:#fff;
+.login-box a:hover {
+    color: #fff;
 }
-.icons{
+
+.icons {
     width: 1.5em;
     height: 1.5em;
     margin: 0 1em;
     vertical-align: middle;
     border: 0;
-    margin-bottom:10px; 
+    margin-bottom: 10px;
 }
 
-.textos{
+.textos {
     margin-right: 5px;
     padding: 0;
     width: 100%;
     height: 100%;
+}
+
+.productos {
+    background: #f2f2f2;
+    height: auto;
+    min-height: 400px;
+    width: auto;
+    margin: 1% 5%;
+}
+
+.catalogo {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.producto {
+    border: #d3d3d3 0.5px solid;
+    background: #d7dfd8;
+    text-align: justify;
+    border-radius: 4px;
+    padding: 1% 4%;
+    margin: 10px 0;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.producto h1 {
+    align-items: center;
+}
+
+.producto img {
+    height: auto;
+    max-height: 80%;
+    width: auto;
+    max-width: 100%;
 }

@@ -2,11 +2,22 @@
 {% extends 'producto/plantilla.html'%}
 {% block content %} 
     <section class="productos row">
+        
+        <div class="filtros col-xs-12 col-md-3 col-lg-3">
+        <h1> hola </h1>
+        </div>
+        <div class="catalogo col-xs-12 col-md-5 col-lg-9">
         {% for producto in productos%}
-        <div class="producto col-xs-12 col-md-3 col-md-3">
+        <div class="producto col-xs-12 col-md-3 col-lg-3">
             <h1>{{ producto.nombre }}</h1>
+            
             <img src="{{ producto.imagen.url }}">
+            <h1>{{ producto.descripcion }}</h1>
+            <h1>{{ producto.marca }}</h1>
+            <h1>$ {{ producto.precio }}</h1>
         </div>
         {% endfor %}
+        </div>
+        
     </section>
 {% endblock %}
