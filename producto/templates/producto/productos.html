@@ -1,0 +1,12 @@
+
+{% extends 'producto/plantilla.html'%}
+{% block content %} 
+    <section class="productos row">
+        {% for producto in productos%}
+        <div class="producto col-xs-12 col-md-3 col-md-3">
+            <h1>{{ producto.nombre }}</h1>
+            <img src="{{ producto.imagen.url }}">
+        </div>
+        {% endfor %}
+    </section>
+{% endblock %}
