@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MaxValueValidator
+from django.utils.translation import ugettext as _
 
 #Almacenar los productos
 class Producto(models.Model):
@@ -17,4 +18,10 @@ class Producto(models.Model):
     def __str__(self):
         return self.nombre
     
+    class Meta:
+        permissions = (
+            ('admin',_('Es administrador')),
+            ('cliente',_('Es cliente')),
+        )
+
     
