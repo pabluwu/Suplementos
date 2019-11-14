@@ -9,11 +9,12 @@
             <form class="filtroMarca" action="/producto/productos" method="POST">
                 <h2>Precio</h2>
                 <input type="submit" name="menor" value="Menor a mayor">
+                {% csrf_token %}
                 <input type="submit" name="mayor" value="Mayor a menor">
+                {% csrf_token %}
                 <h2>Marca</h2>
                 {% for marca in marcas %}
                 <input type="submit" name="nombreMarca" value="{{marca.nombre}}">
-                
                 {% csrf_token %}
                 {% endfor %}
 
