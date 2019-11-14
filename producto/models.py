@@ -6,14 +6,25 @@ from django.core.validators import MaxValueValidator
 class Producto(models.Model):
     idProducto  = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=30)
-    marca = models.CharField(max_length=30)
     precio = models.IntegerField(validators=[MaxValueValidator(99999)])
     imagen = models.ImageField(upload_to='images/')
-    descripcion = models.TextField(max_length=100)
+    descripcion = models.TextField(max_length=350)
+    marcaId = models.ForeignKey('Marca', on_delete=models.SET_NULL, null=True)
+    
 
     def publicar(self):
         self.save()
 
+    def __str__(self):
+        return self.nombre
+
+class Marca(models.Model):
+    idMarca = models.IntegerField(primary_key=True)
+    nombre = models.CharField(max_length=30)
+
+    def guardar(self):
+        self.save()
+    
     def __str__(self):
         return self.nombre
     

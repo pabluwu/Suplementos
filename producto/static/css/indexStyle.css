@@ -143,7 +143,7 @@ mySlides {
 
 .infoEmpresa {
     border: #d3d3d3 0.5px solid;
-    background: #d7dfd8;
+    background: #d3d3d3;
     text-align: justify;
     border-radius: 4px;
     width: 100%;
@@ -434,6 +434,32 @@ label.error {
     margin: 1% 5%;
 }
 
+.filtros {
+    border: #d3d3d3 0.5px solid;
+    background: #d7dfd8;
+    text-align: justify;
+    border-radius: 4px;
+    padding: 0;
+    margin: 11px 0;
+    height: 100%;
+    font-family: 'Fjalla One', sans-serif;
+    padding-bottom: 10px;
+}
+
+.filtros h1 {
+    font-size: 2em;
+    margin-left: 10px;
+}
+
+.filtros h2 {
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+.filtros a {
+    margin-left: 30px;
+}
+
 .catalogo {
     display: flex;
     margin: 0;
@@ -442,22 +468,76 @@ label.error {
 }
 
 .producto {
+    text-align: justify;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.cajaProducto {
     border: #d3d3d3 0.5px solid;
     background: #d7dfd8;
     text-align: justify;
     border-radius: 4px;
-    padding: 1% 4%;
-    margin: 10px 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Fjalla One', sans-serif;
 }
 
-.producto h1 {
-    align-items: center;
+.cajaProducto:hover {
+    background: #c6d2c8;
+    -webkit-box-shadow: 0px 0px 24px 5px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 24px 5px rgba(0, 0, 0, 0.39);
 }
 
-.producto img {
-    height: auto;
-    max-height: 80%;
+.cajaProducto h1 {
+    align-items: center;
+    font-size: 1em;
+    color: #000000;
+}
+
+.cajaProducto img {
     width: auto;
     max-width: 100%;
+}
+
+.filtroMarca {
+    width: 50%;
+    padding: 0 10%;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.contenedorProducto {
+    margin: 2% 10% 5%;
+}
+
+.contenedorImagen {
+    border: #d3d3d3 0.5px solid;
+    background: #ffffff;
+    text-align: justify;
+    border-radius: 4px;
+    padding: 0 10%;
+    height: 100%;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.contenedorImagen img {
+    width: 100%;
+}
+
+.contenedorInformacion {
+    border: #d3d3d3 0.5px solid;
+    background: #ffffff;
+    text-align: justify;
+    border-radius: 4px;
+    font-family: 'Francois One', sans-serif;
+}
+
+.contenedorInformacion h1 {
+    margin: 10% 0;
+}
+
+.contenedorProducto a {
+    margin: 0 0 10px;
+    text-decoration: none;
+    color: #000000;
 }
