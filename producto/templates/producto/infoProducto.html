@@ -1,0 +1,17 @@
+{% extends 'producto/plantilla.html'%}
+{% load humanize %}
+{% block content %}
+    <section class="contenedorProducto row">
+    <a class="volver col-xs-12 col-md-12 col-lg-12" href="{% url 'productos'%}">Volver al listado</a>
+    <div class="contenedorImagen col-xs-12 col-md-8 col-lg-8">
+        <img src="{{ producto.imagen.url }}">
+    </div>
+    <div class="contenedorInformacion col-xs-12 col-md-4 col-lg-4">  
+        <h1>{{ producto.nombre }}</h1>
+        <h1>$ {{ producto.precio|intcomma }}</h1>
+        <p>{{ producto.descripcion }}</p>
+        
+    </div>
+    </section>
+
+{% endblock %}
