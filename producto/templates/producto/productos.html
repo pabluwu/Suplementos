@@ -2,11 +2,40 @@
 {% extends 'producto/plantilla.html'%}
 {% block content %} 
     <section class="productos row">
-        {% for producto in productos%}
-        <div class="producto col-xs-12 col-md-3 col-md-3">
-            <h1>{{ producto.nombre }}</h1>
-            <img src="{{ producto.imagen.url }}">
+        
+        <div class="filtros col-xs-12 col-md-3 col-lg-3">
+        <h1> Ordenar productos </h1>
+        <div>
+            <form class="filtroMarca" action="/producto/productos" method="POST">
+                <h2>Precio</h2>
+                <input type="submit" name="menor" value="Menor a mayor">
+                <input type="submit" name="mayor" value="Mayor a menor">
+                <h2>Marca</h2>
+                {% for marca in marcas %}
+                <input type="submit" name="nombreMarca" value="{{marca.nombre}}">
+                
+                {% csrf_token %}
+                {% endfor %}
+
+                <input type="submit" name="limpiar" value="Limpiar">
+            </form>
+            
         </div>
+        </div>
+        <div class="catalogo col-xs-12 col-md-5 col-lg-9">
+        {% for producto in productos%}
+        <div class="producto col-xs-12 col-md-3 col-lg-3">
+            <a href="{% url 'infoProducto' pk=producto.pk %}">
+                <div class="cajaProducto">
+                    <img src="{{ producto.imagen.url }}">
+                    <h1>{{ producto.nombre }}</h1>
+                    <h1>Precio: $ {{ producto.precio }}</h1>  
+                </div>  
+            </a>          
+        </div>
+        
         {% endfor %}
+        </div>
+        
     </section>
 {% endblock %}
