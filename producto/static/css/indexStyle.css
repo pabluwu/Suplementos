@@ -350,7 +350,7 @@ label.error {
     z-index: 1;
 }
 
-.login-box {
+/* .login-box {
     width: 520px;
     height: 420px;
     background: #000000;
@@ -408,7 +408,7 @@ label.error {
 
 .login-box a:hover {
     color: #fff;
-}
+} */
 
 .icons {
     width: 1.5em;
@@ -540,4 +540,39 @@ label.error {
     margin: 0 0 10px;
     text-decoration: none;
     color: #000000;
+}
+.asies {
+    width: 100%;
+    padding: 0 40%;
+    font-family: 'Fjalla One', sans-serif;
+    
+}
+
+.yes {
+    text-align: center;
+}
+
+.login2 {
+    width: 100%;
+    padding: 0 40%;
+    font-family: 'Fjalla One', sans-serif;
+    
+}
+
+.xdda {
+text-align: center;
+ 
+}
+
+.asiesyop{
+    width: 100%;
+    padding: 15 40%;
+    font-family: 'Fjalla One', sans-serif;
+    
+}
+
+.asiessi{
+    width: 100%;
+    padding: 0 40%;
+    font-family: 'Fjalla One', sans-serif;
 }
