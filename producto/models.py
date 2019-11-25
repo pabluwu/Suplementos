@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MaxValueValidator
+from django.contrib.auth.models import User
 
 #Almacenar los productos
 class Producto(models.Model):
@@ -27,5 +28,9 @@ class Marca(models.Model):
     
     def __str__(self):
         return self.nombre
-    
+
+class ExtendedUser(models.Model):
+    telefono = models.IntegerField(validators=[MaxValueValidator(999999999)])
+    edad = models.DateField()
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
     
