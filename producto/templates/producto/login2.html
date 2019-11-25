@@ -8,9 +8,12 @@
     {% csrf_token %}
     <button type="submit">Login</button>
 </form>
-
+<a href="{% url 'password_reset'%}" class="asiessi">¿Olvidó su contraseña?</a>   
 <hr />
 <a href="{% url 'nuevo'%}" class="asiessi">Crear una nueva cuenta</a>
+
+
+
 
 {% endblock %}
 

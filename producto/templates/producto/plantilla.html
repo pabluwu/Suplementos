@@ -32,7 +32,13 @@
                 <a href="{% url 'index'%}">Inicio</a>
                 <a href="{% url 'productos'%}">Productos</a>
                 <a href="{% url 'contacto'%}">Contacto</a>
-                <a href="{% url 'login2'%}">Inicia Sesión</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout'%}">Cerrar Sesión</a>
+                {% else %}
+                    <a href="{% url 'login2'%}">Inicia Sesión</a>
+                {% endif %}
+                
+                
 
             </div>
         </nav>

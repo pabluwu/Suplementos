@@ -3,10 +3,26 @@
 {% block content %} 
         <h1 class="yes">Registrar Usuario</h1>
         <form method="POST" class="asies">
-             {% csrf_token %} 
-            {{form.as_p}}
-            <button >Registrar</button>
-            <a href="{% url 'login2'%}" class="asiesyop">¿Ya tienes cuenta?</a>
+                {% csrf_token %} 
+                <label>Username</label><br>
+                <input type="text" name="uname" placeholder="Username">
+                <label>Nombre</label><br>
+                <input type="text" name="fname" placeholder="FirstName">
+                <label>Apellido</label><br>
+                <input type="text" name="lname" placeholder="LastName">
+                <label>Contraseña</label><br>
+                <input type="password" name="pass" placeholder="Password">
+                <label>Repetir Contraseña</label><br>
+                <input type="password" name="passwordagain" placeholder="Cofirm Password">
+                <label>Número de teléfono</label><br>
+                <input type="number" name="phone" placeholder="Phone Number">
+                <label>Fecha de nacimiento</label><br>
+                <input type="date" name="age" placeholder="Age">
+                <label>Correo Electronico</label><br>
+                <input type="email" name="correo" placeholder="Email">
+                
+                <input type="submit" value="Signup">
+                <a href="{% url 'login2'%}" class="asiesyop">¿Ya tienes cuenta?</a>
         </form>>
 
 {% endblock %}

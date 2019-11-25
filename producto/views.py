@@ -3,8 +3,10 @@ from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm
 from django.contrib.auth import login as do_login
+from django.contrib.auth.models import User
+from django.contrib import auth
 
 # Create your views here.
 
@@ -40,17 +42,25 @@ def infoProducto(request, pk):
 
 def nuevo(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login2')
+        if request.POST['pass'] == request.POST['passwordagain']:
+            try:
+                user = User.objects.get(username=request.POST['uname'])
+            except User.DoesNotExist:
+                user = User.objects.create_user(username= request.POST['uname'],
+                                                first_name= request.POST['fname'],
+                                                last_name= request.POST['lname'],
+                                                password= request.POST['pass'],
+                                                email= request.POST['correo'])
+                phnum = request.POST['phone']   
+                age = request.POST['age']
+                newExtendedUser = ExtendedUser(telefono=phnum, edad=age, user=user)
+                newExtendedUser.save()
+                auth.login(request,user)
+                return render(request, 'producto/index.html',{})
+        else:
+            return render(request , 'producto/nuevo.html', {'error': 'Las contraseñas no coinciden'})
     else:
-        form = UserCreationForm()
-
-    form.fields['username'].help_text = 'Nombre de Usuario'
-    form.fields['password1'].help_text = 'Contraseña'
-    form.fields['password2'].help_text = 'Repita Contraseña'
-    return render(request, 'producto/nuevo.html', {'form':form})
+        return render(request, 'producto/nuevo.html',{})
     
 
 def login2(request):
@@ -74,6 +84,4 @@ def login2(request):
                 do_login(request, user)
                 
                 return redirect('/')
-
-  
     return render(request, "producto/login2.html", {'form': form})

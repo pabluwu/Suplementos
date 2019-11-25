@@ -31,13 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
+    
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'producto.apps.ProductoConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+
     'django.contrib.humanize',
 
 ]
@@ -125,3 +127,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 MEDIA_URL = '/media/'
 
+LOGOUT_REDIRECT_URL = 'index'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
