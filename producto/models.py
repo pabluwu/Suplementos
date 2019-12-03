@@ -33,4 +33,5 @@ class ExtendedUser(models.Model):
     telefono = models.IntegerField(validators=[MaxValueValidator(999999999)])
     edad = models.DateField()
     user = models.OneToOneField(User,on_delete=models.CASCADE)
-    
+
+
