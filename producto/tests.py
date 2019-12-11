@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import *
+from .models import ExtendedUser, Marca, Producto
 from django.contrib.auth.models import User
 from django.utils.timezone import datetime
 
@@ -20,10 +20,10 @@ class TestUsuario(TestCase):
         exists = User.objects.filter(username='jose123').exists()
         self.assertEqual(exists, True)
 
-class TestProducto(TestCase):
+class TestProductoCrear(TestCase):
     def setUp(self):
         marca = Marca.objects.create(idMarca=1999, nombre='Prueba1')
-        producto= Producto.objects.create(idProducto=512, nombre='PruebaProducto', precio=19999, descripcion='prueba unitaria', marcaId=marca.idMarca)
+        producto= Producto.objects.create(idProducto=512, nombre='PruebaProducto', precio=19999, descripcion='prueba unitaria', marcaId=marca)
         
     def testProductoMarcaCreado(self):
         marcaExiste = Marca.objects.filter(idMarca=1999).exists()
@@ -35,7 +35,7 @@ class TestProducto(TestCase):
 class TestProducto(TestCase):
     def setUp(self):
         marca = Marca.objects.create(idMarca=1999, nombre='Prueba1')
-        producto= Producto.objects.create(idProducto=512, nombre='PruebaProducto', precio=19999, descripcion='prueba unitaria', marcaId=marca.idMarca)
+        producto= Producto.objects.create(idProducto=512, nombre='PruebaProducto', precio=19999, descripcion='prueba unitaria', marcaId=marca)
 
     def testProductoMarcaEliminar(self):
         marca = Marca.objects.get(idMarca=1999)
